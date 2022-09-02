@@ -88,6 +88,7 @@ pm2 restart n8n
 #
 ### pm2 config
 create pm2 config with `pm2 init simple` replce with below code
+
 ```
 module.exports = {
     apps : [{
@@ -115,13 +116,13 @@ module.exports = {
         }
     }]
 }
-#
 ```
+#
 ### Start with pm2 config
 ```
 sudo pm2 start ecosystem.config.js
 ```
-
+#
 ### Start with pm2 with update config
 ```
 sudo pm2 restart ecosystem.config.js --update-env
