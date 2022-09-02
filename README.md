@@ -118,10 +118,14 @@ module.exports = {
 #
 ```
 ### Start with pm2 config
-```sudo pm2 start ecosystem.config.js```
+```
+sudo pm2 start ecosystem.config.js
+```
 
 ### Start with pm2 with update config
-```sudo pm2 restart ecosystem.config.js --update-env```
+```
+sudo pm2 restart ecosystem.config.js --update-env
+```
 #
 We are now ready to configure UFW. First make sure it knows about all your applications by running the below command. It should return `Nginx Full` and `OpenSSH` among the available applications.
 ```
