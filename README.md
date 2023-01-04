@@ -9,12 +9,12 @@ sudo apt update && sudo apt upgrade -y
 ```
 #
 ## Prerequisites
-To run n8n via PM2, you need to have the following software installed:
+To run n8n via PM2, you need to have the following prerequisite installed:
 #
 ### Install Node.js
 Add the NodeSource APT repository for Node 16
 ```
-curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash &&
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash &&
 sudo apt-get install nodejs -y
 ```
 #
@@ -65,8 +65,7 @@ sudo npm install pm2 -g
 ```
 sudo npm install n8n -g
 ```
-#
-### update
+### update (optional)
 ```
 sudo npm update -g  n8n
 ```
@@ -120,12 +119,12 @@ module.exports = {
 #
 ### Start with pm2 config
 ```
-sudo pm2 start ecosystem.config.js
+pm2 start ecosystem.config.js
 ```
 #
 ### Start with pm2 with update config
 ```
-sudo pm2 restart ecosystem.config.js --update-env
+pm2 restart ecosystem.config.js --update-env
 ```
 #
 We are now ready to configure UFW. First make sure it knows about all your applications by running the below command. It should return `Nginx Full` and `OpenSSH` among the available applications.
@@ -138,6 +137,8 @@ Now allow both `Nginx Full` and `OpenSSH` to be accessed from the internet:
 sudo ufw allow OpenSSH
 sudo ufw allow 'Nginx Full'
 sudo ufw allow 5678
+sudo ufw allow 443/tcp
+sudo ufw allow 80/tcp
 ```
 #
 ### Enable firewall
