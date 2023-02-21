@@ -52,7 +52,7 @@ sudo npm install n8n -g
 
 # Start n8n with pm2
 echo n8n Started with pm2
-sudo pm2 start n8n
+pm2 start n8n
 
 # Setup auto-start n8n on machine restart
 echo "Setting up n8n to start automatically on machine restart..."
