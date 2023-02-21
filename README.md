@@ -117,7 +117,7 @@ We are now ready to configure UFW.
 sudo ufw app list
 ```
 
-Now allow bothudp and tcp for `Nginx Full`, `OpenSSH` & `568,443,80` to be accessed from the internet:
+Now allow bothudp and tcp for `Nginx Full`, `OpenSSH` & `5678,443,80` to be accessed from the internet:
 ```
 sudo ufw allow OpenSSH
 sudo ufw allow 'Nginx Full'
