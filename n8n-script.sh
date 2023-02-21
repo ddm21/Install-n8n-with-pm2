@@ -15,9 +15,9 @@ sudo apt-get install -y nodejs
 echo "Installing NGINX server and SSL configuration..."
 sudo apt install nginx -y
 
-# Check Status of NGINX (optional)
-echo "Checking status of NGINX..."
-sudo systemctl status nginx
+#Crating nginx config file
+echo "NGINX Configuration file is created"
+touch /etc/nginx/sites-available/n8n.conf
 
 # Configure NGINX
 echo "Configuring NGINX..."
