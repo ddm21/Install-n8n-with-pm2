@@ -17,7 +17,7 @@ sudo apt install nginx -y
 
 #Crating nginx config file
 echo "NGINX Configuration file is created"
-touch /etc/nginx/sites-available/n8n.conf
+sudo touch /etc/nginx/sites-available/n8n.conf
 
 # Configure NGINX
 echo "Configuring NGINX..."
@@ -52,7 +52,7 @@ sudo npm install n8n -g
 
 # Start n8n with pm2
 echo n8n Started with pm2
-pm2 start n8n
+sudo pm2 start n8n
 
 # Setup auto-start n8n on machine restart
 echo "Setting up n8n to start automatically on machine restart..."
