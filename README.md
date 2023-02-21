@@ -6,7 +6,7 @@ Before doing anything else, update your operating system by running these two co
 sudo apt update && sudo apt upgrade -y
 ```
 
-## Prerequisites
+### Prerequisites
 Add the NodeSource APT repository for Node 16
 ```
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash &&
@@ -64,12 +64,12 @@ sudo npm install n8n -g
 ```
 pm2 startup
 ```
-#
+
 ### Restart the n8n service
 ```
 pm2 restart n8n
 ```
-#
+
 ### pm2 config
 create pm2 config with `pm2 init simple` replce with below code
 
