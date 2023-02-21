@@ -60,6 +60,10 @@ sudo npm install pm2 -g
 ```
 sudo npm install n8n -g
 ```
+### Start n8n with pm2
+```
+pm2 start n8n
+```
 ### Setup auto-start n8n on machine restart
 ```
 pm2 startup
