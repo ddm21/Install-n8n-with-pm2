@@ -51,12 +51,16 @@ echo "Installing n8n..."
 sudo npm install n8n -g
 
 # Start n8n with pm2
-echo n8n Started with pm2
+echo "n8n Started with pm2"
 pm2 start n8n
 
 # Setup auto-start n8n on machine restart
 echo "Setting up n8n to start automatically on machine restart..."
 sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u $USER --hp /home/$USER
+
+# Pm2 save
+echo "pm2 will auto start on system restart"
+pm2 save
 
 # Create pm2 config
 echo "Configuring n8n..."
