@@ -14,7 +14,7 @@ To run n8n via PM2, you need to have the following prerequisite installed:
 ### Install Node.js
 Add the NodeSource APT repository for Node 16
 ```
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash &&
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash &&
 sudo apt-get install nodejs -y
 ```
 #
