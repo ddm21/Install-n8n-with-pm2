@@ -1,7 +1,5 @@
 # Install-n8n-with-pm2
 
-Set up n8n via PM2
-
 ### OS Updates
 Before doing anything else, update your operating system by running these two commands:
 ```
@@ -9,8 +7,6 @@ sudo apt update && sudo apt upgrade -y
 ```
 #
 ## Prerequisites
-To run n8n via PM2, you need to have the following prerequisite installed:
-### Install Node.js
 Add the NodeSource APT repository for Node 16
 ```
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash &&
