@@ -87,9 +87,6 @@ read n8n_username
 echo "Please enter the password you want to use for n8n basic authentication:"
 read n8n_password
 
-echo "PM2 Configuration file is created"
-sudo touch ./ecosystem.config.js
-
 cat > ~/ecosystem.config.js <<EOF
 module.exports = {
     apps : [{
