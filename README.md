@@ -30,7 +30,7 @@ cd /etc/nginx/sites-available/ &&
 sudo nano n8n.conf
 ```
 Now insert a copy of the below example configuration and replace
-```yaml
+```
 server {
     server_name n8n.domain.tld;
     listen 80;
