@@ -30,7 +30,7 @@ cd /etc/nginx/sites-available/ &&
 sudo nano n8n.conf
 ```
 Now insert a copy of the below example configuration and replace
-```
+```yaml
 server {
     server_name n8n.domain.tld;
     listen 80;
@@ -77,7 +77,7 @@ pm2 restart n8n
 ### pm2 config
 create pm2 config with `pm2 init simple` replce with below code
 
-```
+```yaml
 module.exports = {
     apps : [{
         name   : "n8n",
