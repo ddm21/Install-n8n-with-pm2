@@ -159,3 +159,4 @@ ufw enable
 npm update -g  n8n
 ```
 
+Please refer official docs to [import](https://docs.n8n.io/hosting/cli-commands/#import-workflows-and-credentials) or [export](https://docs.n8n.io/hosting/cli-commands/#export-workflows-and-credentials) workflows and credentials.
