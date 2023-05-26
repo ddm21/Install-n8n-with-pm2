@@ -1,5 +1,10 @@
 # Install-n8n-with-pm2
 
+### Make sure you have sudo privilege
+```
+sudo -s
+```
+
 ### OS Updates
 Before doing anything else, update your operating system by running these two commands:
 ```
@@ -146,7 +151,7 @@ sudo ufw allow 80/udp
 
 ### Enable firewall
 ```
-sudo ufw enable -y
+sudo ufw enable
 ```
 
 ### update (optional)
