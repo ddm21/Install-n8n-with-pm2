@@ -8,31 +8,31 @@ sudo -s
 ### OS Updates
 Before doing anything else, update your operating system by running these two commands:
 ```
-sudo apt update && sudo apt upgrade -y
+apt update && sudo apt upgrade -y
 ```
 
 ### Prerequisites
 Add the NodeSource APT repository for Node 16
 ```
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash &&
-sudo apt-get install nodejs -y
+apt-get install nodejs -y
 ```
 
 ### Install NGINX
 NGINX server and the SSL configuration requires
 ```
-sudo apt install nginx -y
+apt install nginx -y
 ```
 
 ### Check Status of NGINX (optional)
 ```
-sudo systemctl status nginx
+systemctl status nginx
 ```
 
 ### Configure NGINX
 ```
 cd /etc/nginx/sites-available/ &&
-sudo nano n8n.conf
+nano n8n.conf
 ```
 Now insert a copy of the below example configuration and replace
 ```
@@ -52,18 +52,18 @@ server {
 
 Now linking the file we have just created
 ```
-sudo ln -s /etc/nginx/sites-available/n8n.conf /etc/nginx/sites-enabled/ &&
-sudo nginx -t &&
-sudo systemctl reload nginx
+ln -s /etc/nginx/sites-available/n8n.conf /etc/nginx/sites-enabled/ &&
+nginx -t &&
+systemctl reload nginx
 ```
 
 ### Install PM2
 ```
-sudo npm install pm2 -g
+npm install pm2 -g
 ```
 ### Install n8n
 ```
-sudo npm install n8n -g
+npm install n8n -g
 ```
 ### Start n8n with pm2
 ```
@@ -134,7 +134,7 @@ pm2 restart ecosystem.config.js --update-env
 
 We are now ready to configure UFW.
 ```
-sudo ufw app list
+ufw app list
 ```
 
 Now allow bothudp and tcp for `Nginx Full`, `OpenSSH` & `5678,443,80` to be accessed from the internet:
@@ -151,11 +151,11 @@ sudo ufw allow 80/udp
 
 ### Enable firewall
 ```
-sudo ufw enable
+ufw enable
 ```
 
 ### update (optional)
 ```
-sudo npm update -g  n8n
+npm update -g  n8n
 ```
 
