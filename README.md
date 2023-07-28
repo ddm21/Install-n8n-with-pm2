@@ -12,9 +12,9 @@ apt update && sudo apt upgrade -y
 ```
 
 ### Prerequisites
-Add the NodeSource APT repository for Node 16
+Add the NodeSource APT repository for Node 18
 ```
-curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash &&
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash &&
 apt-get install nodejs -y
 ```
 
