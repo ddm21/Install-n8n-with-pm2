@@ -74,7 +74,7 @@ pm2 start n8n
 ```
 ### Setup auto-start n8n on machine restart
 ```
-pm2 startup
+pm2 startup && pm2 save
 ```
 
 ### Restart the n8n service
