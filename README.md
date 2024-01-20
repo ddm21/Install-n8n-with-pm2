@@ -50,13 +50,6 @@ server {
         proxy_buffering off;
         proxy_cache off;
     }
-
-    location /ws {
-        proxy_pass http://localhost:5678;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "Upgrade";
-    }
 }
 ```
 
