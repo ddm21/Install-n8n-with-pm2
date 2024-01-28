@@ -97,7 +97,6 @@ module.exports = {
             // N8N_SMTP_PASS: "password",
             // N8N_SMTP_SSL: "true",
             N8N_PROTOCOL: "https",
-            TZ:"Asia/Kolkata",
             GENERIC_TIMEZONE: "Asia/Kolkata",
             N8N_HOST: "n8n.domain.tld",
             WEBHOOK_URL: "https://n8n.domain.tld/",
