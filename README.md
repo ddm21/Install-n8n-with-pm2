@@ -109,11 +109,7 @@ module.exports = {
     }]
 }
 ```
-Update the Admin Login and Password in the above config for the Login Authentication
-```
-N8N_BASIC_AUTH_USER: "admin",
-N8N_BASIC_AUTH_PASSWORD: "password",
-```
+
 If you have a Custom domain then change the below config as well. If not then you can go to `http://SERVER-IP:5678`
 ```
 N8N_HOST: "n8n.domain.tld",
