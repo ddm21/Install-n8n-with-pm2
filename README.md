@@ -112,8 +112,8 @@ module.exports = {
 If you have a Custom domain then change the below config as well. If not then you can go to `http://SERVER-IP:5678`
 ```
 N8N_HOST: "n8n.domain.tld",
-WEBHOOK_URL: "https://n8n.domain.tld/",
-N8N_EDITOR_BASE_URL: "https://n8n.domain.tld/",
+WEBHOOK_URL: "n8n.domain.tld",
+N8N_EDITOR_BASE_URL: "n8n.domain.tld",
 ```
 
 ### Start with pm2 config
@@ -138,9 +138,6 @@ sudo ufw allow 'Nginx Full'
 sudo ufw allow 5678/tcp
 sudo ufw allow 443/tcp
 sudo ufw allow 80/tcp
-sudo ufw allow 5678/udp
-sudo ufw allow 443/udp
-sudo ufw allow 80/udp
 ```
 
 ### Enable firewall
