@@ -14,7 +14,7 @@ apt update && sudo apt upgrade -y
 ### Prerequisites
 Add the NodeSource APT repository for Node 18
 ```
-curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash &&
+sudo curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash &&
 apt-get install nodejs -y
 ```
 
