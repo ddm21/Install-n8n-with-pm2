@@ -107,6 +107,23 @@ module.exports = {
         }
     }]
 }
+
+### if you do not have domain then use below config
+
+module.exports = {
+    apps : [{
+        name   : "n8n",
+        env: {
+            GENERIC_TIMEZONE: "Asia/Kolkata",
+            N8N_HOST: "your_server_ip_here",
+            WEBHOOK_URL: "your_server_ip_here",
+            N8N_EDITOR_BASE_URL: "your_server_ip_here",
+            N8N_ENDPOINT_WEBHOOK: "prod/v1",
+            N8N_ENDPOINT_WEBHOOK_TEST: "test/v1",
+            N8N_METRICS: true,
+        }
+    }]
+}
 ```
 
 If you have a Custom domain then change the below config as well. If not then you can go to `http://SERVER-IP:5678`
