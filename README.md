@@ -120,7 +120,7 @@ module.exports = {
             N8N_EDITOR_BASE_URL: "your_server_ip_here",
             N8N_ENDPOINT_WEBHOOK: "prod/v1",
             N8N_ENDPOINT_WEBHOOK_TEST: "test/v1",
-            N8N_SECURE_COOKIE: true,
+            N8N_SECURE_COOKIE: false,
         }
     }]
 }
