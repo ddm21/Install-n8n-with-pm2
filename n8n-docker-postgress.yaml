@@ -2,17 +2,18 @@ version: '3.8'
 
 services:
   postgres:
-    image: postgres:16
+    container_name: postgres
+    image: postgres:latest
     restart: always
     environment:
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_DB=${POSTGRES_DB}
-      - POSTGRES_NON_ROOT_USER=${POSTGRES_NON_ROOT_USER}
-      - POSTGRES_NON_ROOT_PASSWORD=${POSTGRES_NON_ROOT_PASSWORD}
+      - POSTGRES_USER=myusername
+      - POSTGRES_PASSWORD=mypassword
+      - POSTGRES_DB=mydatabase
+      - POSTGRES_NON_ROOT_USER=nonrootuser
+      - POSTGRES_NON_ROOT_PASSWORD=nonrootpassword
     volumes:
-      - ./data/postgres:/var/lib/postgresql/data
-      - ./init-data.sh:/docker-entrypoint-initdb.d/init-data.sh
+      - postgres-data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Initialization SQL script
     healthcheck:
       test: ['CMD-SHELL', 'pg_isready -h localhost -U ${POSTGRES_USER} -d ${POSTGRES_DB}']
       interval: 5s
@@ -20,21 +21,29 @@ services:
       retries: 10
 
   n8n:
+    container_name: n8n
     image: docker.n8n.io/n8nio/n8n
     restart: always
     environment:
       - DB_TYPE=postgresdb
-      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_HOST=<YOUR_ORACLE_VM_PUBLIC_IP>  # Replace with your Oracle VM's public IP address
       - DB_POSTGRESDB_PORT=5432
-      - DB_POSTGRESDB_DATABASE=${POSTGRES_DB}
-      - DB_POSTGRESDB_USER=${POSTGRES_NON_ROOT_USER}
-      - DB_POSTGRESDB_PASSWORD=${POSTGRES_NON_ROOT_PASSWORD}
+      - DB_POSTGRESDB_DATABASE=mydatabase
+      - DB_POSTGRESDB_USER=nonrootuser
+      - DB_POSTGRESDB_PASSWORD=nonrootpassword
+      - N8N_PROTOCOL=https
+      - GENERIC_TIMEZONE=Asia/Kolkata
+      - N8N_HOST=<YOUR_ORACLE_VM_PUBLIC_IP>  # Replace with your Oracle VM's public IP address
+      - WEBHOOK_URL=https://<YOUR_ORACLE_VM_PUBLIC_IP>/
+      - N8N_EDITOR_BASE_URL=https://<YOUR_ORACLE_VM_PUBLIC_IP>/
+      - N8N_ENDPOINT_WEBHOOK=prod/v1
+      - N8N_ENDPOINT_WEBHOOK_TEST=test/v1
+      - N8N_METRICS=true
     ports:
-      - 5678:5678
-    links:
-      - postgres
+      - "<YOUR_ORACLE_VM_PUBLIC_IP>:5678:5678"  # Expose n8n service on port 5678 to the public IP
     volumes:
-      - ./data/n8n:/home/node/.n8n
-    depends_on:
-      postgres:
-        condition: service_healthy
+      - n8n-data:/home/node/.n8n
+
+volumes:
+  postgres-data:
+  n8n-data:
