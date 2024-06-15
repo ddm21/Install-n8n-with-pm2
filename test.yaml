@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n
+    container_name: n8n
+    restart: always
+    ports:
+      - "5678:5678"
+    environment:
+      - GENERIC_TIMEZONE=Asia/Kolkata
+      - TZ=Asia/Kolkata
+      - N8N_HOST=<serve-ip>
+      - WEBHOOK_URL=http://<serve-ip>:5678
+      - N8N_EDITOR_BASE_URL=http://<serve-ip>:5678
+      - N8N_ENDPOINT_WEBHOOK=prod/v1
+      - N8N_ENDPOINT_WEBHOOK_TEST=test/v1
+      - N8N_SECURE_COOKIE=false
+    volumes:
+      - n8n_data:/home/node/.n8n
+
+volumes:
+  n8n_data:
+    driver: local
