@@ -22,3 +22,5 @@ services:
 volumes:
   n8n_data:
     driver: local
+
+# sudo docker exec <container-id> ls -l /home/node/.n8n
