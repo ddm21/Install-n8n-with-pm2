@@ -48,5 +48,5 @@ volumes:
   postgres-data:
   n8n-data:
 
-# sudo docker exec e9901f88c10f ls -l /home/node/.n8n
+# sudo docker exec <container-id> ls -l /home/node/.n8n
 # sudo docker exec -it <container-id> sh
