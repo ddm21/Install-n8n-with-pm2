@@ -24,3 +24,4 @@ volumes:
     driver: local
 
 # sudo docker exec <container-id> ls -l /home/node/.n8n
+# sudo docker exec -it <container-id> sh
