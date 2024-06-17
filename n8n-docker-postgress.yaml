@@ -43,6 +43,7 @@ services:
       - "<YOUR_ORACLE_VM_PUBLIC_IP>:5678:5678"  # Expose n8n service on port 5678 to the public IP
     volumes:
       - n8n-data:/home/node/.n8n
+      - /usr/share/fonts/truetype/:/usr/share/fonts/truetype/host/
 
 volumes:
   postgres-data:
