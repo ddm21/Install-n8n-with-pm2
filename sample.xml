@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE configuration SYSTEM "b1-conf.dtd">
+<configuration>
+
+  <node name="REGISTRY">
+    <node name="HKEY_LOCAL_MACHINE">
+      <node name="SOFTWARE">
+        <node name="SAP">
+          <node name="SAP Manage">
+            <node name="SAP Business One">
+              <leaf kind="single" name="LicenseServer" type="String">
+                <value>localhost:30000</value>
+              </leaf>
+              <leaf kind="single" name="LogBO" type="String">
+                <value>N</value>
+              </leaf>
+              <leaf kind="single" name="LicenseServerProtocol" type="String">
+                <value>CORBA</value>
+              </leaf>
+              <node name="EDF">
+                <node name="Backend">
+                  <leaf kind="single" name="StartupDelaySec" type="Integer">
+                    <value>15</value>
+                  </leaf>
+                  <leaf kind="single" name="LoopDelaySec" type="Integer">
+                    <value>1</value>
+                  </leaf>
+                  <leaf kind="single" name="LoadDocMaxDays" type="Integer">
+                    <value>100</value>
+                  </leaf>
+                  <leaf kind="single" name="GetEntryIntervalSec" type="Integer">
+                    <value>5</value>
+                  </leaf>
+                  <leaf kind="single" name="CFDI_CancelGetStatusIntervalSec" type="Integer">
+                    <value>300</value>
+                  </leaf>
+                </node>
+              </node>
+              <leaf kind="single" name="BAAllowedFileType" type="String">
+                <value>PIC,JPG,BMP,xlsx,txt,xls,csv,DLL,dbf,dat,dtm,plf,dat,PNK,srf,xml,BFP,rpt,b1p,b1px,gep,spp,pak,zip,BPP,GEP,SPP,htm,html,PNG,qdf,bpmn,xbml,pfx,p12,cer,crt,key,json,doc,docx,pdf</value>
+              </leaf>
+              <leaf kind="single" name="Enable Xml Filtered" type="String">
+                <value>N</value>
+              </leaf>
+              <leaf kind="single" name="Trusted Entity Allowlist" type="String">
+                <value/>
+              </leaf>
+              <leaf kind="single" name="SLDAddress" type="String">
+                <value>standby:40000</value>
+              </leaf>
+            </node>
+            <node name="EWA"/>
+            <node name="LicenseManager">
+              <leaf kind="single" name="Machine" type="String">
+                <value>localhost</value>
+              </leaf>
+              <leaf kind="single" name="Port" type="String">
+                <value>30000</value>
+              </leaf>
+            </node>
+            <node name="SBOMail"/>
+            <node name="Service Manager">
+              <node name="Registered Services">
+                <leaf kind="single" name="SBOBackUp" type="String">
+                  <value>B1_BackUpD.dll</value>
+                </leaf>
+                <leaf kind="single" name="SBOMail" type="String">
+                  <value>B1_MailerD.dll</value>
+                </leaf>
+                <leaf kind="single" name="LicenseManager" type="String">
+                  <value>B1_LicenseManagerD.dll</value>
+                </leaf>
+                <leaf kind="single" name="SBODIServer" type="String">
+                  <value>B1_DIServerD.dll</value>
+                </leaf>
+                <leaf kind="single" name="EWA &amp; Support" type="String">
+                  <value>B1_EwaD.dll</value>
+                </leaf>
+                <leaf kind="single" name="Workflow" type="String">
+                  <value>B1_WorkflowManagerD.dll</value>
+                </leaf>
+              </node>
+            </node>
+            <node name="SBOBackUp"/>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+
+</configuration>
